@@ -187,6 +187,8 @@ MonoBehaviour:
   _offsetColor: {r: 0.36704755, g: 0.764151, b: 0.3200783, a: 1}
   _renderer: {fileID: 3923217152981455744}
   _highlight: {fileID: 4248845597830822215}
+  plantPresent: 0
+  _plant: {fileID: 4114770664584087657, guid: 9261a604aab26774fb32945cfea5e973, type: 3}
 --- !u!61 &3157817313588771770
 BoxCollider2D:
   m_ObjectHideFlags: 0

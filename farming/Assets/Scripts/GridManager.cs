@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    [SerializeField] private int width, height;
+    public int width, height;
     [SerializeField] private Tile _tilePrefab;
     [SerializeField] private Transform Cam;
 
@@ -20,6 +20,8 @@ public class GridManager : MonoBehaviour
             {
                 var spawnedTile = Instantiate(_tilePrefab, new Vector3(x, y), Quaternion.identity);
                 spawnedTile.name = $"Tile {x} {y}";
+                spawnedTile.GetComponent<Tile>().x = x;
+                spawnedTile.GetComponent<Tile>().y = y;
 
                 var isOffset = (x % 2 == 0 && y % 2 != 0) || (x % 2 != 0 && y % 2 == 0);
                 spawnedTile.Init(isOffset);
