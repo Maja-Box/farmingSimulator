@@ -8,28 +8,48 @@ public class PlantLogic : MonoBehaviour
     [SerializeField] float growthRate;
     float water;
     [SerializeField] float waterConsumptionRate;
-    
-  
+    [SerializeField] string name;
+    [SerializeField] Sprite[] sprites;
+    SpriteRenderer spriteRenderer;
+    int e;
+    int growthStage;
+
     void Start()
     {
-        
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        water = 50;
+        spriteRenderer.sprite = sprites[0];
+        e = 100 / (sprites.Length - 1);
+        growthStage = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        growth -= growthRate;
+        
+        growth += growthRate;
+        Debug.Log(growth);
+        if (water <= 0)
+            Destroy(this);
+        else
         water -= waterConsumptionRate;
-       
-    }
-    private void OnTriggerStay2D(Collision2D collision)
-    {
-        Debug.Log("colide");
-        if (collision.gameObject.CompareTag("WaterBucket"))
+        if (growth > e)
         {
-            water += 0.1f;
-            Debug.Log("water");
+            growthStage += 1;
+            spriteRenderer.sprite = sprites[growthStage];
+            e += 100 / (sprites.Length - 1);
         }
     }
-   
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("WaterBucket") && water < 100)
+        {
+
+            water += 0.1f;
+
+        }
+    }
+    
+        
 }
