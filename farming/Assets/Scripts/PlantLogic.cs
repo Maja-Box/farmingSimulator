@@ -22,7 +22,7 @@ public class PlantLogic : MonoBehaviour
         water -= waterConsumptionRate;
        
     }
-    private void OnTriggerStay2D(Collision collision)
+    private void OnTriggerStay2D(Collision2D collision)
     {
         Debug.Log("colide");
         if (collision.gameObject.CompareTag("WaterBucket"))
@@ -31,5 +31,5 @@ public class PlantLogic : MonoBehaviour
             Debug.Log("water");
         }
     }
-
+   
 }
