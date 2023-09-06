@@ -28,9 +28,9 @@ public class PlantLogic : MonoBehaviour
     {
         
         growth += growthRate;
-        Debug.Log(growth);
+        //Debug.Log(growth);
         if (water <= 0)
-            Destroy(this);
+            Destroy(this.gameObject);
         else
         water -= waterConsumptionRate;
         if (growth > e)
@@ -45,7 +45,7 @@ public class PlantLogic : MonoBehaviour
 
         if (collision.gameObject.CompareTag("WaterBucket") && water < 100)
         {
-
+            Debug.Log("mmm water");
             water += 0.1f;
 
         }
