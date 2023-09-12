@@ -33,6 +33,10 @@ public class Tile : MonoBehaviour
         {
             var SpawnedPlant = Instantiate(_plant,new Vector3(x, y), Quaternion.identity);
             plantPresent = true;
+
+            //this.gameObject.transform.parent = SpawnedPlant.transform;
+            SpawnedPlant.transform.SetParent(this.gameObject.transform, true);
+
         }
     }
 
