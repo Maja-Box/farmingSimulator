@@ -268,7 +268,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.8301887, g: 0.23809181, b: 0.23809181, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -320,9 +320,9 @@ MonoBehaviour:
   waterConsumptionRate: 1
   name: 
   sprites:
-  - {fileID: -942064076, guid: 3182b18276c728d4ea86980b965c75ba, type: 3}
-  - {fileID: -1692269398, guid: 3182b18276c728d4ea86980b965c75ba, type: 3}
-  - {fileID: -494445789, guid: 3182b18276c728d4ea86980b965c75ba, type: 3}
+  - {fileID: 1619804025, guid: 1173dc414612c2949990717f66026f22, type: 3}
+  - {fileID: -1503741727, guid: 1173dc414612c2949990717f66026f22, type: 3}
+  - {fileID: 307169996, guid: 1173dc414612c2949990717f66026f22, type: 3}
   slider: {fileID: 5967550126830628645}
 --- !u!1 &4616289365394453885
 GameObject:
