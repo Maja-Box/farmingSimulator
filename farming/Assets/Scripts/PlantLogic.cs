@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlantLogic : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlantLogic : MonoBehaviour
     SpriteRenderer spriteRenderer;
     int e;
     int growthStage;
+    [SerializeField] Slider slider;
+
 
     void Start()
     {
@@ -21,18 +24,20 @@ public class PlantLogic : MonoBehaviour
         spriteRenderer.sprite = sprites[0];
         e = 100 / (sprites.Length - 1);
         growthStage = 0;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        slider.value = water;
         if (growth < 100)
-        growth += growthRate * Time.deltaTime;
+            growth += growthRate * Time.deltaTime;
         //Debug.Log(growth);
         if (water <= 0)
             Destroy(this.gameObject);
         else
-        water -= waterConsumptionRate * Time.deltaTime;
+            water -= waterConsumptionRate * Time.deltaTime;
         if (growth > e)
         {
             growthStage += 1;
@@ -46,10 +51,10 @@ public class PlantLogic : MonoBehaviour
         if (collision.gameObject.CompareTag("WaterBucket") && water < 100)
         {
             Debug.Log("mmm water");
-            water += 0.1f * Time.deltaTime;
+            water += 10 * Time.deltaTime;
 
         }
     }
-    
+}  
         
-}
+
