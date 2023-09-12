@@ -35,7 +35,10 @@ public class PlantLogic : MonoBehaviour
             growth += growthRate * Time.deltaTime;
         //Debug.Log(growth);
         if (water <= 0)
+        {
             Destroy(this.gameObject);
+            transform.parent.GetComponent<Tile>().plantPresent = false;
+        }
         else
             water -= waterConsumptionRate * Time.deltaTime;
         if (growth > e)
