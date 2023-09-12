@@ -26,13 +26,13 @@ public class PlantLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        growth += growthRate;
+        if (growth < 100)
+        growth += growthRate * Time.deltaTime;
         //Debug.Log(growth);
         if (water <= 0)
             Destroy(this.gameObject);
         else
-        water -= waterConsumptionRate;
+        water -= waterConsumptionRate * Time.deltaTime;
         if (growth > e)
         {
             growthStage += 1;
@@ -46,7 +46,7 @@ public class PlantLogic : MonoBehaviour
         if (collision.gameObject.CompareTag("WaterBucket") && water < 100)
         {
             Debug.Log("mmm water");
-            water += 0.1f;
+            water += 0.1f * Time.deltaTime;
 
         }
     }
