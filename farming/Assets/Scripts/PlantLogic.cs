@@ -54,7 +54,7 @@ public class PlantLogic : MonoBehaviour
         if (collision.gameObject.CompareTag("WaterBucket") && water < 100)
         {
             Debug.Log("mmm water");
-            water += 10 * Time.deltaTime;
+            water += 50 * Time.deltaTime;
 
         }
     }
